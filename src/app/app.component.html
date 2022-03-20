@@ -1,3 +1,7 @@
-<app-header></app-header>
-<app-main></app-main>
-<app-footer></app-footer>
+<div class="page-container" @smoothappearance>
+  <app-header></app-header>
+  <main [class]="centralized ? 'height-normaliser middle' : 'height-normaliser'">
+    <router-outlet (activate)="handler($event)"></router-outlet>
+  </main>
+  <app-footer></app-footer>
+</div>
