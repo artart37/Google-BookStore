@@ -20,7 +20,11 @@ export class SignInComponent {
     this.showEmailError = !this.usernameNgmodel.control.valid;
   }
 
-  signinAction(userName: NgForm): void {
-    this.router.navigateByUrl('/main');
+  signinAction(userNameForm: NgForm): void {
+    this.router.navigate(['book-store'], {
+      queryParams: {
+        username: userNameForm.control.value.username,
+      },
+    });
   }
 }
