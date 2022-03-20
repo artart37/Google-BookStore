@@ -1,1 +1,213 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+html {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 62.5%;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/* Page structure */
+.page-container {
+  display: grid;
+  grid-template-rows: 60.5px calc(100% - 261px) 200.5px;
+  margin: 0;
+}
+/* End of Global Styles */
+/* Structure */
+.central {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  max-width: 1128px;
+}
+/* End of Structure */
+/* Typography */
+.hero-headline {
+  font-size: 5.6rem;
+  margin: 2.3rem 0;
+  font-weight: bold;
+}
+
+.simple-headline {
+  font-size: 4.2rem;
+  margin: 1.725rem 0;
+  font-weight: bold;
+}
+
+.simple-secondary-headline {
+  font-size: 3.15rem;
+  margin: 1.294rem 0;
+  font-weight: bold;
+}
+
+.small-simple-secondary-headline {
+  font-size: 2.363rem;
+  margin: 0.93rem 0;
+  font-weight: bold;
+}
+
+p.hero-text,
+span.hero-text,
+.hero-text > p,
+.hero-text > span {
+  font-size: 3.2rem;
+  margin: 1.314rem 0;
+}
+
+p.large-text,
+span.large-text,
+.large-text > p,
+.large-text > span {
+  font-size: 2.4rem;
+  margin: 0.986rem 0;
+}
+
+p.simple-text,
+span.simple-text,
+.simple-text > p,
+.simple-text > span,
+.simple-text > li {
+  font-size: 1.8rem;
+  margin: 0.739rem 0;
+}
+
+p.small-text,
+span.small-text,
+.small-text > p,
+.small-text > span,
+.small-text > li {
+  font-size: 1.35rem;
+  margin: 0.554rem 0;
+}
+.hero-text > .special,
+.large-text > .special,
+.simple-text > .special,
+.small-text > .special,
+.hero-headline > .special,
+.simple-headline > .special,
+.simple-secondary-headline > .special,
+.smallsimple-secondary-headline > .special {
+  margin: 0;
+}
+
+li {
+  font-size: 1.6rem;
+  margin: 0.657rem 0;
+}
+.a-no-style {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.f-link {
+  cursor: pointer;
+}
+
+.f-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 1px solid;
+  border-bottom-color: inherit;
+  transition: width 0.2s ease-out;
+}
+
+.f-link:hover:after {
+  width: 100%;
+}
+
+/* End of Typography */
+/* Responsive Styling */
+@media only screen and (max-device-width: 480px) {
+  .central,
+  .footer-wrapper {
+    width: calc(100% - 2rem);
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 600px) {
+  .hero-headline {
+    font-size: 4.9rem;
+  }
+  .simple-headline {
+    font-size: 3.675rem;
+  }
+  .simple-secondary-headline {
+    font-size: 2.756rem;
+  }
+  .small-simple-secondary-headline {
+    font-size: 2.067rem;
+  }
+  li {
+    font-size: 1.4rem;
+  }
+  p.hero-text,
+  span.hero-text,
+  .hero-text > p,
+  .hero-text > span {
+    font-size: 2.8rem;
+  }
+
+  p.large-text,
+  span.large-text,
+  .large-text > p,
+  .large-text > span {
+    font-size: 2.1rem;
+  }
+
+  p.simple-text,
+  span.simple-text,
+  .simple-text > p,
+  .simple-text > span,
+  .simple-text > li {
+    font-size: 1.575rem;
+  }
+
+  p.small-text,
+  span.small-text,
+  .small-text > p,
+  .small-text > span,
+  .small-text > li {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 910px) {
+  .central,
+  .footer-wrapper {
+    width: calc(100% - 4rem);
+    padding: 0 2rem 0 2rem;
+  }
+}
+
+@media only screen and (min-device-width: 911px) and (max-device-width: 1167px) {
+  .central,
+  .footer-wrapper {
+    width: calc(100% - 4rem);
+    padding: 0 2rem 0 2rem;
+  }
+}
+
+@media only screen and (min-device-width: 1168px) {
+  .central,
+  .footer-wrapper {
+    padding: 0;
+  }
+}
