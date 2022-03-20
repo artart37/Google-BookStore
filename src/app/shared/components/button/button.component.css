@@ -1,0 +1,158 @@
+:host {
+  display: block;
+  background: transparent;
+}
+
+.default {
+  margin: 0;
+  padding: 0 16px;
+  min-height: 4.05rem;
+  min-width: 72px;
+  border-radius: 0.449rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.2;
+  outline: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: 0.2rem;
+}
+.stretch {
+  width: 100%;
+}
+.minimal {
+  background-color: #ffffff;
+  color: #191919;
+}
+
+.solid {
+  background: #191919;
+  color: #ffffff;
+}
+
+.accent {
+  background: #2d4263;
+  color: #ffffff;
+}
+
+.minimal::after,
+.solid::after,
+.accent::after {
+  content: "";
+  display: block;
+  width: 25%;
+}
+
+.minimal::after {
+  border-bottom: 1px solid #191919;
+  -webkit-transition: width 0.2s ease-out;
+  -o-transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
+}
+.solid::after,
+.accent::after {
+  border-bottom: 1px solid #ffffff;
+  -webkit-transition: width 0.2s ease-out;
+  -o-transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
+}
+
+.default[disabled] > .default::after,
+.solid[disabled].solid::after,
+.accent[disabled].accent::after,
+.no-line.default::after,
+.no-line.solid::after,
+.no-line.accent::after {
+  display: none;
+}
+
+.default[disabled],
+.solid[disabled],
+.accent[disabled] {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.borders.minimal {
+  border: 1px solid #191919;
+}
+
+.short {
+  min-height: 3.6rem;
+}
+
+.tall:not(.round) {
+  min-height: 4.4rem;
+}
+
+.tall.round {
+  min-height: 4.6rem;
+}
+
+.round.short:not(.tall) {
+  border-radius: 1.8rem;
+}
+
+.round:not(.tall):not(.short) {
+  border-radius: 2.025rem;
+}
+
+.round.tall:not(.short) {
+  border-radius: 2.3rem;
+  padding: 0 18px;
+}
+
+:host:hover > .minimal:after,
+:host:hover > .solid:after,
+:host:hover > .accent::after {
+  width: 100%;
+}
+
+.default.no-line {
+  letter-spacing: 0.1rem;
+  -webkit-transition: background-color 0.4s ease;
+  -o-transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease;
+}
+
+.accent.no-line:hover:enabled {
+  background-color: #394d6f;
+}
+.accent.no-line:active:enabled {
+  background-color: #35496b;
+}
+
+.solid.no-line:hover:enabled {
+  background-color: #314667;
+}
+.solid.no-line:active:enabled {
+  background-color: #2d4263;
+}
+
+.minimal.no-line:hover:enabled {
+  background-color: #eeeeee;
+}
+.minimal.no-line:active:enabled {
+  background-color: #dddddd;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .default {
+    font-size: 1.378rem;
+  }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 600px) {
+  .default {
+    font-size: 1.575rem;
+  }
+}
