@@ -1,0 +1,304 @@
+.control-group > fieldset,
+.control-group > input,
+.control-group > select,
+.control-group > textarea {
+  margin-bottom: 0;
+}
+fieldset,
+input,
+select,
+textarea {
+  margin-bottom: 1.5rem;
+}
+.control-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="week"],
+input:not([type]),
+textarea,
+select {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 0.1rem solid #ecdbba;
+  border-radius: 0.4rem;
+  box-shadow: none;
+  box-sizing: border-box;
+  height: 3.8rem;
+  padding: 0.6rem 1rem 0.7rem;
+  width: 100%;
+}
+input[type="color"].error,
+input[type="date"].error,
+input[type="datetime"].error,
+input[type="datetime-local"].error,
+input[type="email"].error,
+input[type="month"].error,
+input[type="number"].error,
+input[type="password"].error,
+input[type="search"].error,
+input[type="tel"].error,
+input[type="text"].error,
+input[type="url"].error,
+input[type="week"].error,
+input:not([type]).error,
+textarea.error,
+select.error {
+  border-color: #c84b31;
+}
+
+input[type="color"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+input:not([type]):focus,
+textarea:focus,
+select:focus {
+  border-color: #2d4263;
+  outline: 0;
+}
+
+input[type="color"]:focus.error,
+input[type="date"]:focus.error,
+input[type="datetime"]:focus.error,
+input[type="datetime-local"]:focus.error,
+input[type="email"]:focus.error,
+input[type="month"]:focus.error,
+input[type="number"]:focus.error,
+input[type="password"]:focus.error,
+input[type="search"]:focus,
+input[type="tel"]:focus.error,
+input[type="text"]:focus.error,
+input[type="url"]:focus.error,
+input[type="week"]:focus.error,
+input:not([type]):focus.error,
+textarea:focus.error,
+select:focus.error {
+  border-width: 0.2rem;
+  border-color: #c84b31;
+}
+
+select {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23ECDBBA" d="M0,0l6,8l6-8"/></svg>')
+    center right no-repeat;
+  padding-right: 3rem;
+}
+
+select:focus {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%232D4263" d="M0,0l6,8l6-8"/></svg>');
+}
+
+select[multiple] {
+  background: none;
+  height: auto;
+}
+
+textarea {
+  min-height: 6.5rem;
+}
+
+label,
+legend {
+  display: block;
+  font-size: 1.4rem;
+  margin: 0.574rem 0;
+  font-weight: 700;
+  color: #0f0f0f;
+}
+/* Custom Radio Input */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 40px;
+}
+.radio-group > label {
+  flex: 1;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.6rem 0 0.7rem 0;
+}
+.radio-group > label,
+input {
+  margin: 0;
+}
+.radio-group > label > .radioText {
+  padding: 0 0 0 0.8rem;
+}
+.radio-group > label > .radio-checkmark {
+  box-sizing: border-box;
+  display: block;
+  height: 20px;
+  transition: border-color ease 280ms;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #0f0f0f;
+  position: relative;
+}
+.radio-checkmark::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: #cdc6c640;
+  box-sizing: border-box;
+  left: -11.1562px;
+  right: auto;
+  margin: -1px 0 0 0;
+  top: -10px;
+  border: none;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0);
+  transition: background-color ease 280ms, opacity ease 280ms,
+    transform ease 280ms;
+}
+
+.radio-checkmark::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: hsl(204, 100%, 40%);
+  bottom: 25%;
+  left: calc(50% - 5px);
+  border: none;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity ease 280ms, transform ease 280ms;
+}
+
+.radio-group > label > .radio-checkmark:hover {
+  border-color: #645028;
+}
+
+.radio-group > label > .radio-checkmark:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+input[type="radio"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+.radio-group > label > input[type="radio"]:checked + .radio-checkmark::before {
+  background-color: #1c345c17;
+  opacity: 1;
+  transform: scale(1);
+}
+input[type="radio"]:checked + .radio-checkmark::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.radio-group > label > input[type="radio"]:checked + .radio-checkmark {
+  border-color: #1c345c;
+}
+/* End of custom Radio Input */
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
+
+.label-inline {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: 0.5rem;
+}
+
+/* Custom Mat styles */
+.custom-mat-hint {
+  visibility: visible;
+  font-weight: 500;
+  line-height: 1.35rem;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: 1.2rem;
+  color: #191919;
+  display: block;
+  margin: 6.5px 0 0 0;
+}
+.custom-mat-error {
+  visibility: visible;
+  font-weight: 500;
+  line-height: 1.35rem;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: 1.2rem;
+  color: #c84b31;
+  display: block;
+  margin: 6.5px 0 0 0;
+}
+
+@media only screen and (max-device-width: 269px) {
+  .radio-group.left-edge {
+    padding-left: 0;
+  }
+  .radio-group > label > .radio-checkmark:hover::before {
+    display: none;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  label,
+  legend {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-device-width: 269px) and (max-device-width: 820px) {
+  .radio-group.left-edge {
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 600px) {
+  label,
+  legend {
+    font-size: 1.225rem;
+  }
+}
