@@ -1,0 +1,35 @@
+<app-modal (closeModalEvent)="closeBookItemModal()">
+  <section class="modal-header simple-secondary-headline">
+    <p>Some Title</p>
+  </section>
+  <section class="modal-body large-text book-item-details-body">
+    <p><span>Authors: </span>{{ book.volumeInfo?.authors | getAuthors }}</p>
+    <p>
+      <span>Publisher: </span>{{ book.volumeInfo?.publisher || "unavailable" }}
+    </p>
+    <p>
+      <span>Published Date: </span
+      >{{ book.volumeInfo.publishedDate | date: "dd/MM/YYYY" }}
+    </p>
+    <p>
+      <span>Description: </span
+      >{{ book.volumeInfo?.description || "unavailable" }}
+    </p>
+    <ng-container *ngIf="!isAddedToWishlist; else elseTemplate">
+      <app-button
+        [buttonStyle]="'minimal tall round no-line borders stretch'"
+        (buttonClickEvent)="addToWishList(book)"
+      >
+        <span>Add to my Wishlist</span>
+      </app-button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <section class="added-wishlist-wrapper">
+        <p class="simple-text">Added to wishlist</p>
+      </section>
+    </ng-template>
+  </section>
+  <section class="modal-footer simple-text book-item-details-footer">
+    <span>BookStore</span>
+  </section>
+</app-modal>

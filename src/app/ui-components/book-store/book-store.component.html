@@ -1,1 +1,34 @@
-<p>main works!</p>
+<div class="main">
+  <div class="section-wrapper flex-centre">
+    <section class="central">
+      <h3 class="hero-headline">Hello, {{ username }}</h3>
+      <h4 class="simple-secondary-headline">Find some books</h4>
+      <input type="text" ngModel #searchInput="ngModel" />
+      <div class="results-container">
+        <ng-container *ngIf="status === 'SUCCESS' && bookItems?.length">
+          <article
+            class="book-item large-text"
+            (click)="openBookItemDetails(item)"
+            *ngFor="let item of bookItems; trackBy: trackById"
+          >
+            <p><span>Title: </span>{{ item.volumeInfo.title }}</p>
+            <p>
+              <span>Authors: </span>{{ item.volumeInfo?.authors | getAuthors }}
+            </p>
+          </article>
+        </ng-container>
+        <app-spinner [status]="status"></app-spinner>
+      </div>
+    </section>
+  </div>
+</div>
+<router-outlet name="bookItemModal"></router-outlet>
+
+<ng-template #noData *ngIf="status !== 'SUCCESS' && !bookItems?.length">
+  <div class="loader-outer section-wrapper flex-centre">
+    <section class="central simple-text loader-inner">
+      <span *ngIf="status !== 'LOADING'">No books have been looked for</span>
+      <span *ngIf="status === 'FAILURE'">Failed returning books, sorry</span>
+    </section>
+  </div>
+</ng-template>

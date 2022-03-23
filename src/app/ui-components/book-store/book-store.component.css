@@ -1,0 +1,58 @@
+@import "../../shared/styles/forms.css";
+
+.results-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1rem auto 1rem auto;
+  grid-template-columns: calc(33.3333% - 0.6666rem) calc(33.3333% - 0.6666rem) calc(
+      33.3333% - 0.6666rem
+    );
+  grid-gap: 1rem 1rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.results-container {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.book-item {
+  -webkit-box-shadow: 0.125rem 0.125rem 0.2375rem -0.1875rem #191919;
+  -moz-box-shadow: 0.125rem 0.125rem 0.2375rem -0.1875rem #191919;
+  box-shadow: 0.125rem 0.125rem 0.2375rem -0.1875rem #191919;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.book-item p > span:nth-child(odd) {
+  font-weight: 600;
+}
+
+.book-item:hover {
+  -webkit-box-shadow: 0.0625rem 1rem 4rem 1rem #e2e1df;
+  -moz-box-shadow: 0.0625rem 1rem 4rem 1rem #e2e1df;
+  box-shadow: 0.0625rem 1rem 4rem 1rem #e2e1df;
+}
+
+.loader-inner {
+  align-items: center;
+}
+
+.loader-outer {
+  position: absolute;
+  top: 50%;
+}
+
+@media only screen and (max-device-width: 590px) {
+  .results-container {
+    grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
+  }
+}

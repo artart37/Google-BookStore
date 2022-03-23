@@ -1,0 +1,32 @@
+<div class="section-wrapper flex-centre">
+  <section class="central">
+    <h3 class="simple-headline">My Wishlist</h3>
+    <ng-container *ngIf="wishlist.length > 0; else elseTemplate">
+      <div class="wishlist-wrapper">
+        <section
+          class="wishlist-item"
+          *ngFor="let item of wishlist; trackBy: trackById"
+        >
+          <section class="wishlist-description large-text">
+            <p><span>Title: </span>{{ item.volumeInfo.title }}</p>
+            <p>
+              <span>Authors: </span>{{ item.volumeInfo?.authors | getAuthors }}
+            </p>
+          </section>
+          <app-button
+            [buttonStyle]="'minimal tall round no-line borders'"
+            (buttonClickEvent)="removeWishListItem(item)"
+            ><span>Remove</span>
+          </app-button>
+        </section>
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <div class="wishlist-outer section-wrapper flex-centre">
+        <section class="central large-text wishlist-inner">
+          <span class="large-text">Wishlist is empty</span>
+        </section>
+      </div>
+    </ng-template>
+  </section>
+</div>
