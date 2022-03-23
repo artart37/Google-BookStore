@@ -4,6 +4,10 @@ import { BookStoreGuard } from './ui-components/book-store/guards/book-store.gua
 
 const appRoutes: Routes = [
   {
+    path:"wishlist",
+    loadChildren:() => import("./ui-components/book-store/wishlist/modules/wishlist.module").then(mod=>mod.WishlistModule),
+  },
+  {
     path:"book-store",
     loadChildren:() => import("./ui-components/book-store/modules/book-store.module").then(mod=>mod.BookStoreModule),
     canActivate: [BookStoreGuard]
