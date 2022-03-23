@@ -1,5 +1,19 @@
 <header class="header">
-  <section class="brandcontainer">
-    <span routerLink="/signin">BookStore</span>
+  <section class="brand-container">
+    <span (click)="refreshApp()">BookStore</span>
   </section>
+  <div class="right-tools" *ngIf="isLoggedIn">
+    <app-button
+      [buttonStyle]="'solid short round no-line'"
+      (buttonClickEvent)="navigateToWishlist()"
+    >
+      <span>My Wishlist</span>
+    </app-button>
+    <app-button
+      [buttonStyle]="'short round no-line'"
+      (buttonClickEvent)="logOut()"
+    >
+      <span>Log out</span>
+    </app-button>
+  </div>
 </header>
